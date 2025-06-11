@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ronald Almeida - Portfólio de Dança</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #0f0f0f, #1f1f1f);
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header {
+      background: #000;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      background-image: linear-gradient(to right, #e91e63, #9c27b0);
+      color: white;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.3rem;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .bio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .bio img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #e91e63;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 15px #e91e63;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: #292929;
+      border-radius: 15px;
+      padding: 1.5rem;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .card:hover {
+      background: #3b3b3b;
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #e91e63;
+      margin-bottom: 0.8rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 3rem auto 1rem;
+    }
+    input, textarea {
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #1f1f1f;
+      color: white;
+      border: 1px solid #555;
+    }
+    button {
+      padding: 1rem;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #c2185b;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #e91e63;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ronald Almeida</h1>
+    <p>Dançarino, Coreógrafo & Artista de Fortaleza - CE</p>
+  </header>
+
+  <section class="bio">
+    <img src="ronaldok.png" alt="Ronald Almeida">
+    <p>
+      "Sou Ronald Sousa, artista apaixonado pela dança urbana, educador físico em formação e instrutor de FitDance. Meu trabalho é traduzir emoções em movimento, inspirar e transformar vidas pela arte corporal."
+    </p>
+  </section>
+
+  <section>
+    <h2 style="text-align: center; color: #e91e63; margin-bottom: 1rem;">Áreas de Atuação</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Danças Urbanas</h3>
+        <p>Com um estilo vibrante e envolvente, Ronald domina o universo das danças urbanas, como Hip Hop, Funk e Street. Suas aulas são sinônimo de energia e atitude.</p>
+      </div>
+      <div class="card">
+        <h3>Personal Dancer</h3>
+        <p>Atendimento personalizado para quem quer aprender a dançar no seu ritmo. Ideal para eventos, apresentações e para quem busca evolução individual.</p>
+      </div>
+      <div class="card">
+        <h3>Instrutor FitDance</h3>
+        <p>Aulas coletivas animadas com coreografias atuais e contagiantes, promovendo saúde, diversão e conexão com o público.</p>
+      </div>
+      <div class="card">
+        <h3>Instrutor Swag</h3>
+        <p>Estilo, presença e atitude. Aulas voltadas para quem quer brilhar na dança com autenticidade e impacto.</p>
+      </div>
+      <div class="card">
+        <h3>Educação Física</h3>
+        <p>Graduando em Educação Física, Ronald complementa sua atuação artística com conhecimentos técnicos do corpo e movimento, mirando futuramente atuar como personal trainer completo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align: center; color: #e91e63; margin-top: 2rem;">Entre em Contato</h2>
+    <form onsubmit="enviarMensagem(); return false;">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="email" id="email" placeholder="Seu email" required>
+      <textarea id="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar mensagem via WhatsApp</button>
+    </form>
+    <script>
+      function enviarMensagem() {
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const texto = `Olá, me chamo ${nome} (%0AEmail: ${email}) e gostaria de falar com você. %0A%0A${mensagem}`;
+        const url = `https://wa.me/558594075647?text=${texto}`;
+        window.open(url, '_blank');
+      }
+    </script>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ronald Almeida - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
